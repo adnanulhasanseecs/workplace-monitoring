@@ -40,8 +40,9 @@ def auth_token(test_user):
     """Get auth token for test user."""
     response = client.post(
         "/api/v1/auth/login",
-        data={"username": "testuser", "password": "TestPassword123!"},
+        json={"username": "testuser", "password": "TestPassword123!"},
     )
+    assert response.status_code == 200, f"Login failed: {response.text}"
     return response.json()["access_token"]
 
 
