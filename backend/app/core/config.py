@@ -48,6 +48,8 @@ class Settings(BaseSettings):
     DEFAULT_FPS: int = 5
     BURST_FPS: int = 30
     CHUNK_DURATION_SECONDS: int = 300
+    VIDEO_CHUNK_DURATION_SECONDS: int = 300  # Alias for chunker
+    VIDEO_STORAGE_PATH: str = "./storage"  # Base path for video storage
     FRAME_SAMPLE_RATE: int = 1
     
     # GPU Configuration
