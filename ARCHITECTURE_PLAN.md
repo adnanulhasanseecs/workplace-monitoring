@@ -720,6 +720,16 @@ sequenceDiagram
   - [x] OpenTelemetry tracing setup
   - [x] Audit logging middleware
 
+- [x] **Testing Infrastructure**
+  - [x] Unit tests for database models (User, Camera, Event, Alert, Rule, AuditLog)
+  - [x] Unit tests for Pydantic schemas (validation, serialization)
+  - [x] Unit tests for security utilities (password hashing, JWT)
+  - [x] Unit tests for authentication API endpoints
+  - [x] Unit tests for configuration management
+  - [x] Unit tests for observability setup
+  - [x] Test fixtures and database setup (conftest.py)
+  - [x] All 36 tests passing
+
 ### Phase 2: Domain Layer & API Foundation
 **Goal**: Implement business logic and API contracts
 
@@ -741,6 +751,14 @@ sequenceDiagram
   - [ ] Rule configuration schema
   - [ ] Zone definitions
   - [ ] Threshold configuration
+
+- [ ] **Testing**
+  - [ ] Unit tests for domain services (cameras, events, alerts, rules)
+  - [ ] Unit tests for repositories (data access layer)
+  - [ ] Integration tests for API endpoints (CRUD operations)
+  - [ ] Tests for configuration loading and validation
+  - [ ] Tests for zone definitions and rule evaluation logic
+  - [ ] API contract tests (request/response validation)
 
 ### Phase 3: Video Processing Pipeline
 **Goal**: Implement video ingestion and ML inference
@@ -764,6 +782,17 @@ sequenceDiagram
   - [ ] Redis queue integration
   - [ ] Job scheduling
 
+- [ ] **Testing**
+  - [ ] Unit tests for video ingestion handlers (RTSP, HTTP, file upload)
+  - [ ] Unit tests for video chunking logic
+  - [ ] Integration tests for YOLO11Engine (mock GPU if needed)
+  - [ ] Unit tests for frame processing pipeline
+  - [ ] Unit tests for object tracking
+  - [ ] Unit tests for event clip extraction
+  - [ ] Integration tests for orchestrator job distribution
+  - [ ] Tests for GPU resource manager
+  - [ ] Tests for Redis queue operations
+
 ### Phase 4: Rules Engine & Event Detection
 **Goal**: Configurable event detection system
 
@@ -780,6 +809,16 @@ sequenceDiagram
   - [ ] Temporal analysis for sequence-based events
   - [ ] Event deduplication
 
+- [ ] **Testing**
+  - [ ] Unit tests for rules engine evaluation logic
+  - [ ] Tests for all event types (easy, medium, hard complexity)
+  - [ ] Tests for temporal event detection (frame sequences)
+  - [ ] Tests for zone-based rules
+  - [ ] Tests for confidence threshold handling
+  - [ ] Integration tests for event detection pipeline
+  - [ ] Tests for pose estimation (if implemented)
+  - [ ] Tests for event deduplication logic
+
 ### Phase 5: Alerts & Notifications
 **Goal**: Alert generation and notification system
 
@@ -793,6 +832,16 @@ sequenceDiagram
   - [ ] Email notifications (SMTP)
   - [ ] Webhook support
   - [ ] Notification preferences
+
+- [ ] **Testing**
+  - [ ] Unit tests for alert service (rule evaluation)
+  - [ ] Tests for alert throttling logic
+  - [ ] Tests for alert deduplication
+  - [ ] Unit tests for email notification channel
+  - [ ] Unit tests for webhook dispatcher
+  - [ ] Unit tests for in-app notification service
+  - [ ] Integration tests for notification delivery
+  - [ ] Tests for notification preferences management
 
 ### Phase 6: Frontend Dashboard
 **Goal**: Enterprise-grade UI
@@ -810,6 +859,17 @@ sequenceDiagram
   - [ ] User management (Admin)
   - [ ] Dark/light mode toggle
   - [ ] Responsive design
+
+- [ ] **Testing**
+  - [ ] Component unit tests (React Testing Library)
+  - [ ] Integration tests for dashboard components
+  - [ ] Tests for event timeline and filters
+  - [ ] Tests for video playback component
+  - [ ] Tests for alert management UI
+  - [ ] Tests for camera management UI
+  - [ ] E2E tests for critical user flows (Playwright/Cypress)
+  - [ ] Accessibility tests (WCAG compliance)
+  - [ ] Visual regression tests (optional)
 
 ### Phase 7: Reporting Engine
 **Goal**: Scheduled and on-demand reports
@@ -831,6 +891,18 @@ sequenceDiagram
   - [ ] Report delivery (email)
   - [ ] Report history
 
+- [ ] **Testing**
+  - [ ] Unit tests for report generation logic
+  - [ ] Tests for report templates
+  - [ ] Tests for event aggregation and statistics
+  - [ ] Tests for trend analysis algorithms
+  - [ ] Tests for heatmap generation
+  - [ ] Tests for PDF generation
+  - [ ] Tests for Excel export
+  - [ ] Tests for CSV export
+  - [ ] Integration tests for scheduled report generation
+  - [ ] Tests for report delivery via email
+
 ### Phase 8: Security & Compliance
 **Goal**: Enterprise security hardening
 
@@ -849,6 +921,18 @@ sequenceDiagram
   - [ ] Compliance reporting
   - [ ] Data export for audits
 
+- [ ] **Testing**
+  - [ ] Tests for encryption at rest (event clips)
+  - [ ] Tests for TLS configuration
+  - [ ] Tests for secure credential storage
+  - [ ] Tests for face masking functionality
+  - [ ] Tests for identity anonymization
+  - [ ] Tests for data retention policies
+  - [ ] Tests for audit log generation
+  - [ ] Tests for compliance reporting
+  - [ ] Tests for data export functionality
+  - [ ] Security penetration tests (optional)
+
 ### Phase 9: Performance & Scalability
 **Goal**: Optimize for 300-600 cameras
 
@@ -864,6 +948,17 @@ sequenceDiagram
   - [ ] Database connection pooling
   - [ ] Queue optimization
 
+- [ ] **Testing**
+  - [ ] Performance tests for frame sampling optimization
+  - [ ] Load tests for batch inference
+  - [ ] Database query performance tests
+  - [ ] Redis caching performance tests
+  - [ ] Load tests for multi-GPU scenarios
+  - [ ] Stress tests for horizontal worker scaling
+  - [ ] Database connection pool stress tests
+  - [ ] Queue throughput tests
+  - [ ] End-to-end performance benchmarks (300-600 cameras simulation)
+
 ### Phase 10: Windows Deployment
 **Goal**: Windows-native deployment (optional, can skip initially)
 
@@ -876,6 +971,14 @@ sequenceDiagram
   - [ ] MSI/EXE installer
   - [ ] Dependency installation
   - [ ] Configuration wizard
+
+- [ ] **Testing**
+  - [ ] Tests for Windows service installation
+  - [ ] Tests for Windows service management
+  - [ ] Tests for installer scripts
+  - [ ] Tests for dependency installation
+  - [ ] Tests for configuration wizard
+  - [ ] Integration tests on Windows environment
 
 ## Technology Stack
 
