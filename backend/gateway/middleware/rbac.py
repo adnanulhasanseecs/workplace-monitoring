@@ -59,3 +59,30 @@ def check_role(user_role: str, required_role: UserRole) -> bool:
     
     return user_level >= required_level
 
+
+def require_role(user, allowed_roles: List[UserRole]) -> None:
+    """
+    Check if user has one of the required roles.
+    
+    Args:
+        user: Current user instance (from get_current_user)
+        allowed_roles: List of allowed roles
+        
+    Raises:
+        HTTPException: If user doesn't have required role
+    """
+    from models.db.user import User
+    
+    if not isinstance(user, User):
+        raise HTTPException(
+            status_code=status.HTTP_401_UNAUTHORIZED,
+            detail="Authentication required",
+        )
+    
+    user_role = UserRole(user.role)
+    if user_role not in allowed_roles:
+        raise HTTPException(
+            status_code=status.HTTP_403_FORBIDDEN,
+            detail=f"Insufficient permissions. Required roles: {[r.value for r in allowed_roles]}",
+        )
+
