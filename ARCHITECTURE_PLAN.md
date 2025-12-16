@@ -548,7 +548,7 @@ workflow-monitoring/
 
 ### Frontend (`frontend/`)
 - **Purpose**: Enterprise-grade React UI with dark/light mode
-- **Stack**: React 18+, TypeScript, Tailwind CSS, ShadCN UI, Framer Motion
+- **Stack**: React 19.2.3, TypeScript 5.9.2, Tailwind CSS 4.1.18, ShadCN UI, Framer Motion
 - **Key Features**:
   - Dashboard with real-time metrics
   - Event timeline and playback
@@ -592,10 +592,10 @@ workflow-monitoring/
 
 ### Worker Runtime (`backend/worker/`)
 - **Purpose**: GPU-accelerated video processing (compute-only)
-- **Stack**: PyTorch, Ultralytics YOLO11, OpenCV
+- **Stack**: PyTorch 2.4.1, Ultralytics YOLO11 8.5.0+, OpenCV 4.10.0
 - **Key Features**:
   - Frame sampling and batching
-  - YOLO11 inference
+  - YOLO11 inference (YOLO11Engine class implemented)
   - Object tracking
   - Rules engine execution (runs in worker pipeline)
   - Event clip extraction (only event clips stored)
@@ -694,31 +694,31 @@ sequenceDiagram
 ### Phase 1: Foundation & Core Infrastructure
 **Goal**: Establish project structure and basic services
 
-- [ ] **Project Setup**
-  - [ ] Create folder structure
-  - [ ] Initialize frontend (React + TypeScript + Tailwind)
-  - [ ] Initialize backend (FastAPI)
-  - [ ] Set up PostgreSQL and Redis
-  - [ ] Configure environment variables
+- [x] **Project Setup**
+  - [x] Create folder structure
+  - [x] Initialize frontend (React 19 + TypeScript + Tailwind CSS 4)
+  - [x] Initialize backend (FastAPI 0.121)
+  - [x] Set up PostgreSQL and Redis (configuration ready)
+  - [x] Configure environment variables
 
-- [ ] **Database Models & Schemas**
-  - [ ] Create `models/db/` with SQLAlchemy models (User, Camera, Event, Alert, Rule, AuditLog)
-  - [ ] Create `models/schemas/` with Pydantic schemas
-  - [ ] Create `models/enums.py` with shared enums
-  - [ ] Database migrations (Alembic)
+- [x] **Database Models & Schemas**
+  - [x] Create `models/db/` with SQLAlchemy models (User, Camera, Event, Alert, Rule, AuditLog)
+  - [x] Create `models/schemas/` with Pydantic schemas
+  - [x] Create `models/enums.py` with shared enums
+  - [x] Database migrations (Alembic configured)
 
-- [ ] **Authentication & Authorization**
-  - [ ] JWT authentication service
-  - [ ] RBAC implementation (Admin, Supervisor, Viewer)
-  - [ ] Password hashing (bcrypt)
-  - [ ] Auth middleware
-  - [ ] Login/logout endpoints
+- [x] **Authentication & Authorization**
+  - [x] JWT authentication service
+  - [x] RBAC implementation (Admin, Supervisor, Viewer)
+  - [x] Password hashing (bcrypt)
+  - [x] Auth middleware (gateway layer)
+  - [x] Login/register endpoints
 
-- [ ] **Observability Foundation**
-  - [ ] Structured logging setup
-  - [ ] Prometheus metrics scaffolding
-  - [ ] OpenTelemetry tracing setup
-  - [ ] Audit logging middleware
+- [x] **Observability Foundation**
+  - [x] Structured logging setup
+  - [x] Prometheus metrics scaffolding
+  - [x] OpenTelemetry tracing setup
+  - [x] Audit logging middleware
 
 ### Phase 2: Domain Layer & API Foundation
 **Goal**: Implement business logic and API contracts
@@ -753,7 +753,7 @@ sequenceDiagram
 
 - [ ] **Worker Runtime**
   - [ ] Worker entry point (`worker/main.py`)
-  - [ ] YOLO11 integration (`inference/yolo_engine.py`)
+  - [x] YOLO11 integration (`inference/yolo_engine.py`) - YOLO11Engine class created
   - [ ] Frame processing pipeline
   - [ ] Object tracking implementation
   - [ ] Event clip extraction (save only clips, not full video)
@@ -880,30 +880,30 @@ sequenceDiagram
 ## Technology Stack
 
 ### Frontend
-- React 18+ with TypeScript
-- Tailwind CSS
+- React 19.2.3 with TypeScript 5.9.2
+- Tailwind CSS 4.1.18
 - ShadCN UI components
-- Framer Motion (animations)
-- Recharts (charts)
-- Lucide Icons
-- React Query (data fetching)
-- Axios (HTTP client)
+- Framer Motion 11.11.0 (animations)
+- Recharts 2.15.0 (charts)
+- Lucide Icons 0.468.0
+- React Query 5.62.0 (data fetching)
+- Axios 1.7.9 (HTTP client)
 
 ### Backend
 - Python 3.11+
-- FastAPI
-- SQLAlchemy (ORM)
-- Alembic (migrations)
-- Pydantic (validation)
-- Redis (queue, cache)
+- FastAPI 0.121.0
+- SQLAlchemy 2.0.36 (ORM)
+- Alembic 1.14.1 (migrations)
+- Pydantic 2.12.4 (validation)
+- Redis 5.2.1 (queue, cache)
 - PostgreSQL 14+
-- Celery (optional, for async tasks)
+- Celery 5.4.0 (optional, for async tasks)
 
 ### ML/Inference
-- PyTorch
-- Ultralytics YOLO11
-- OpenCV
-- NumPy
+- PyTorch 2.4.1
+- Ultralytics YOLO11 8.5.0+ (supports yolo11n/s/m/l/x models)
+- OpenCV 4.10.0
+- NumPy 1.26.4
 - CUDA (for GPU acceleration)
 
 ### Infrastructure
