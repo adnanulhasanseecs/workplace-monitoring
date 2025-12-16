@@ -1,20 +1,20 @@
 # Include base requirements
 -r requirements.txt
 
-# PyTorch and CUDA (latest stable as of 2025)
-torch==2.3.1
-torchvision==0.18.1
-torchaudio==2.3.1
+# PyTorch and CUDA (latest stable as of December 2025)
+torch==2.4.1
+torchvision==0.19.1
+torchaudio==2.4.1
 
 # Ultralytics YOLO11 (latest stable)
-ultralytics==8.3.0
+ultralytics==8.5.0
 
 # Computer Vision
 opencv-python==4.10.0.84
 opencv-contrib-python==4.10.0.84
-pillow==10.4.0
+pillow==11.0.0
 numpy==1.26.4
-scipy==1.13.1
+scipy==1.14.1
 
 # Video Processing
 ffmpeg-python==0.2.0
