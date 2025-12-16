@@ -5,14 +5,7 @@ from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker
 
 from app.core.config import settings
-
-# Import Base from models
-try:
-    from models.db.base import Base
-except ImportError:
-    # Fallback for direct imports
-    from sqlalchemy.orm import declarative_base
-    Base = declarative_base()
+from models.db.base import Base
 
 # Create database engine
 engine = create_engine(
