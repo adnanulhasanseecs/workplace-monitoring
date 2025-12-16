@@ -1,8 +1,8 @@
 """
 Base database model class.
 """
-from sqlalchemy.orm import declarative_base
-from sqlalchemy import Column, Integer, DateTime
+from sqlalchemy.orm import declarative_base  # type: ignore
+from sqlalchemy import Column, Integer, DateTime  # type: ignore
 from datetime import datetime
 
 Base = declarative_base()

@@ -1,7 +1,7 @@
 """
 Application configuration management.
 """
-from pydantic_settings import BaseSettings
+from pydantic_settings import BaseSettings  # type: ignore
 from typing import List
 
 
