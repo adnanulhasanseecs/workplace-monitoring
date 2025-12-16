@@ -7,7 +7,7 @@ from fastapi.middleware.cors import CORSMiddleware
 from app.core.config import settings
 from app.core.database import engine
 from models.db.base import Base
-from app.api.v1 import auth, cameras, events, alerts, rules
+from app.api.v1 import auth, cameras, events, alerts, rules, ingestion
 from gateway.middleware.audit import audit_middleware
 
 # Initialize observability
@@ -43,6 +43,7 @@ app.include_router(cameras.router, prefix=settings.API_V1_PREFIX)
 app.include_router(events.router, prefix=settings.API_V1_PREFIX)
 app.include_router(alerts.router, prefix=settings.API_V1_PREFIX)
 app.include_router(rules.router, prefix=settings.API_V1_PREFIX)
+app.include_router(ingestion.router, prefix=settings.API_V1_PREFIX)
 
 
 @app.get("/")
