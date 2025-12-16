@@ -1,0 +1,143 @@
+{
+  "version": 1,
+  "rules": [
+    {
+      "id": "architecture-first",
+      "description": "Always design architecture before coding.",
+      "instructions": [
+        "Before writing any code, outline the system architecture or module responsibility.",
+        "Clearly state where this code fits in the overall system.",
+        "Avoid ad-hoc implementations."
+      ]
+    },
+    {
+      "id": "enterprise-security",
+      "description": "Enterprise security is mandatory.",
+      "instructions": [
+        "Assume enterprise deployment with strict security and compliance needs.",
+        "Never store credentials, secrets, or tokens in code.",
+        "Use environment variables or secure config providers.",
+        "Enforce authentication, authorization, and audit logging."
+      ]
+    },
+    {
+      "id": "privacy-by-design",
+      "description": "Privacy-first system design.",
+      "instructions": [
+        "Assume video data is sensitive.",
+        "Avoid unnecessary storage of raw video.",
+        "Prefer metadata over raw frames whenever possible.",
+        "Support anonymization and masking where applicable."
+      ]
+    },
+    {
+      "id": "config-over-code",
+      "description": "Prefer configuration-driven behavior.",
+      "instructions": [
+        "Event definitions must be configurable.",
+        "Thresholds, zones, and rules should not be hardcoded.",
+        "Use JSON/YAML-based configs or database-driven settings."
+      ]
+    },
+    {
+      "id": "modular-ml-pipelines",
+      "description": "ML pipelines must be modular and replaceable.",
+      "instructions": [
+        "Separate detection, tracking, and rule logic.",
+        "Avoid tightly coupling models with business rules.",
+        "Design ML inference as pluggable services."
+      ]
+    },
+    {
+      "id": "gpu-aware-design",
+      "description": "GPU-aware and performance-conscious coding.",
+      "instructions": [
+        "Be explicit about GPU usage and memory constraints.",
+        "Avoid loading multiple large models simultaneously unless necessary.",
+        "Batch inference where possible."
+      ]
+    },
+    {
+      "id": "batch-first-processing",
+      "description": "Batch processing is the default assumption.",
+      "instructions": [
+        "Design pipelines assuming batch video processing.",
+        "Real-time constraints are secondary unless explicitly stated.",
+        "Optimize for throughput rather than latency."
+      ]
+    },
+    {
+      "id": "windows-first",
+      "description": "Windows deployment is a first-class requirement.",
+      "instructions": [
+        "Ensure compatibility with Windows paths and services.",
+        "Avoid Linux-only dependencies unless explicitly approved.",
+        "Document CUDA, GPU, and driver assumptions clearly."
+      ]
+    },
+    {
+      "id": "clean-folder-structure",
+      "description": "Maintain a clean, scalable folder structure.",
+      "instructions": [
+        "Separate frontend, backend, ML, orchestration, and infrastructure code.",
+        "Avoid dumping unrelated logic in single files.",
+        "Use meaningful and consistent naming."
+      ]
+    },
+    {
+      "id": "enterprise-ui-standard",
+      "description": "UI must feel like an enterprise product.",
+      "instructions": [
+        "Avoid toy UI patterns or demo-style layouts.",
+        "Use consistent typography, spacing, and component hierarchy.",
+        "Prefer dashboards, filters, and data tables over raw logs."
+      ]
+    },
+    {
+      "id": "api-contracts",
+      "description": "Stable API contracts are mandatory.",
+      "instructions": [
+        "Define request/response schemas explicitly.",
+        "Version APIs where appropriate.",
+        "Avoid breaking API changes without migration strategy."
+      ]
+    },
+    {
+      "id": "logging-and-audit",
+      "description": "Auditability is mandatory.",
+      "instructions": [
+        "Log user actions, configuration changes, and model decisions.",
+        "Logs must be structured and searchable.",
+        "Avoid logging raw video or sensitive frames."
+      ]
+    },
+    {
+      "id": "no-silent-failures",
+      "description": "Never fail silently.",
+      "instructions": [
+        "All errors must be logged with context.",
+        "Return meaningful error messages.",
+        "Gracefully degrade instead of crashing."
+      ]
+    },
+    {
+      "id": "future-scale-ready",
+      "description": "Design for future scaling.",
+      "instructions": [
+        "Assume more cameras, more models, and more users in future.",
+        "Avoid assumptions that limit horizontal or vertical scaling.",
+        "Make orchestration extendable."
+      ]
+    },
+    {
+      "id": "documentation-always",
+      "description": "Document as you build.",
+      "instructions": [
+        "Add docstrings for all public methods.",
+        "Explain complex logic with inline comments.",
+        "Update README when architecture changes."
+      ]
+    }
+  ]
+}
+

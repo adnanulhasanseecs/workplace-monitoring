@@ -1,0 +1,28 @@
+# Include base requirements
+-r requirements.txt
+
+# PyTorch and CUDA
+torch==2.1.0
+torchvision==0.16.0
+torchaudio==2.1.0
+
+# Ultralytics YOLO11
+ultralytics==8.1.0
+
+# Computer Vision
+opencv-python==4.8.1.78
+opencv-contrib-python==4.8.1.78
+pillow==10.1.0
+numpy==1.26.2
+scipy==1.11.4
+
+# Video Processing
+ffmpeg-python==0.2.0
+
+# Object Tracking
+filterpy==1.4.5
+scikit-image==0.22.0
+
+# GPU Utilities
+pynvml==11.5.0
+
