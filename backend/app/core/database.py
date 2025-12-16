@@ -2,10 +2,17 @@
 Database connection and session management.
 """
 from sqlalchemy import create_engine
-from sqlalchemy.ext.declarative import declarative_base
 from sqlalchemy.orm import sessionmaker
 
 from app.core.config import settings
+
+# Import Base from models
+try:
+    from models.db.base import Base
+except ImportError:
+    # Fallback for direct imports
+    from sqlalchemy.orm import declarative_base
+    Base = declarative_base()
 
 # Create database engine
 engine = create_engine(
@@ -17,9 +24,6 @@ engine = create_engine(
 
 # Create session factory
 SessionLocal = sessionmaker(autocommit=False, autoflush=False, bind=engine)
-
-# Base class for models
-Base = declarative_base()
 
 
 def get_db():

@@ -5,7 +5,8 @@ from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 
 from app.core.config import settings
-from app.core.database import engine, Base
+from app.core.database import engine
+from models.db.base import Base
 from app.api.v1 import auth
 from gateway.middleware.audit import audit_middleware
 

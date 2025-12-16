@@ -13,11 +13,11 @@ class Settings(BaseSettings):
     APP_VERSION: str = "1.0.0"
     ENVIRONMENT: str = "development"
     DEBUG: bool = True
-    SECRET_KEY: str
+    SECRET_KEY: str = "change-me-in-production"
     API_V1_PREFIX: str = "/api/v1"
     
     # Database
-    DATABASE_URL: str
+    DATABASE_URL: str = "sqlite:///./app.db"
     DATABASE_POOL_SIZE: int = 10
     DATABASE_MAX_OVERFLOW: int = 20
     
@@ -30,7 +30,7 @@ class Settings(BaseSettings):
     REDIS_PASSWORD: str = ""
     
     # JWT
-    JWT_SECRET_KEY: str
+    JWT_SECRET_KEY: str = "change-me-in-production"
     JWT_ALGORITHM: str = "HS256"
     JWT_ACCESS_TOKEN_EXPIRE_MINUTES: int = 30
     JWT_REFRESH_TOKEN_EXPIRE_DAYS: int = 7
