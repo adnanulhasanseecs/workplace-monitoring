@@ -20,7 +20,7 @@ class Camera(BaseModel):
     stream_type = Column(String, nullable=False)  # rtsp, http, file
     status = Column(String, default=CameraStatus.INACTIVE.value, nullable=False)
     zone_config = Column(JSON, nullable=True)  # Zone definitions for this camera
-    metadata = Column(JSON, nullable=True)  # Additional metadata
+    extra_metadata = Column(JSON, nullable=True)  # Additional metadata (renamed from 'metadata' to avoid SQLAlchemy conflict)
     
     # Relationships
     # events = relationship("Event", back_populates="camera")

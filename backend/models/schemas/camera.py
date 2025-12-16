@@ -15,7 +15,7 @@ class CameraBase(BaseModel):
     stream_url: Optional[str] = None
     stream_type: str  # rtsp, http, file
     zone_config: Optional[Dict[str, Any]] = None
-    metadata: Optional[Dict[str, Any]] = None
+    extra_metadata: Optional[Dict[str, Any]] = None
 
 
 class CameraCreate(CameraBase):
@@ -31,7 +31,7 @@ class CameraUpdate(BaseModel):
     stream_url: Optional[str] = None
     status: Optional[CameraStatus] = None
     zone_config: Optional[Dict[str, Any]] = None
-    metadata: Optional[Dict[str, Any]] = None
+    extra_metadata: Optional[Dict[str, Any]] = None
 
 
 class CameraResponse(CameraBase):

@@ -1,7 +1,7 @@
 """
 Event database model.
 """
-from sqlalchemy import Column, String, Integer, Float, DateTime, JSON, Text, ForeignKey
+from sqlalchemy import Column, String, Integer, Float, DateTime, JSON, Text, ForeignKey, Boolean
 from sqlalchemy.orm import relationship
 
 from models.db.base import BaseModel
@@ -21,7 +21,7 @@ class Event(BaseModel):
     timestamp = Column(DateTime, nullable=False, index=True)
     frame_number = Column(Integer, nullable=True)
     clip_path = Column(String, nullable=True)  # Path to event clip
-    metadata = Column(JSON, nullable=True)  # Detection metadata, bounding boxes, etc.
+    extra_metadata = Column(JSON, nullable=True)  # Detection metadata, bounding boxes, etc. (renamed from 'metadata' to avoid SQLAlchemy conflict)
     description = Column(Text, nullable=True)
     acknowledged = Column(Boolean, default=False, nullable=False)
     acknowledged_by = Column(Integer, ForeignKey("users.id"), nullable=True)

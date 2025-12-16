@@ -22,5 +22,5 @@ class Rule(BaseModel):
     zone_config = Column(JSON, nullable=True)  # Zone-specific rules
     conditions = Column(JSON, nullable=False)  # Rule evaluation conditions
     alert_config = Column(JSON, nullable=True)  # Alert configuration
-    metadata = Column(JSON, nullable=True)
+    extra_metadata = Column(JSON, nullable=True)  # Additional metadata (renamed from 'metadata' to avoid SQLAlchemy conflict)
 

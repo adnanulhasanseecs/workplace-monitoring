@@ -18,7 +18,7 @@ class RuleBase(BaseModel):
     zone_config: Optional[Dict[str, Any]] = None
     conditions: Dict[str, Any]
     alert_config: Optional[Dict[str, Any]] = None
-    metadata: Optional[Dict[str, Any]] = None
+    extra_metadata: Optional[Dict[str, Any]] = None
 
 
 class RuleCreate(RuleBase):
@@ -36,7 +36,7 @@ class RuleUpdate(BaseModel):
     zone_config: Optional[Dict[str, Any]] = None
     conditions: Optional[Dict[str, Any]] = None
     alert_config: Optional[Dict[str, Any]] = None
-    metadata: Optional[Dict[str, Any]] = None
+    extra_metadata: Optional[Dict[str, Any]] = None
 
 
 class RuleResponse(RuleBase):

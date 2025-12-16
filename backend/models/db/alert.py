@@ -20,7 +20,7 @@ class Alert(BaseModel):
     recipient = Column(String, nullable=False)  # email address, webhook URL, user ID
     subject = Column(String, nullable=True)
     message = Column(Text, nullable=True)
-    metadata = Column(JSON, nullable=True)
+    extra_metadata = Column(JSON, nullable=True)  # Additional metadata (renamed from 'metadata' to avoid SQLAlchemy conflict)
     sent_at = Column(DateTime, nullable=True)
     acknowledged = Column(Boolean, default=False, nullable=False)
     acknowledged_by = Column(Integer, ForeignKey("users.id"), nullable=True)

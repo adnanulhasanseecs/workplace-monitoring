@@ -15,7 +15,7 @@ class AlertBase(BaseModel):
     recipient: str
     subject: Optional[str] = None
     message: Optional[str] = None
-    metadata: Optional[Dict[str, Any]] = None
+    extra_metadata: Optional[Dict[str, Any]] = None
 
 
 class AlertCreate(AlertBase):

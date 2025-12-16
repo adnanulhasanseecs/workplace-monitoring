@@ -17,7 +17,7 @@ class EventBase(BaseModel):
     timestamp: datetime
     frame_number: Optional[int] = None
     clip_path: Optional[str] = None
-    metadata: Optional[Dict[str, Any]] = None
+    extra_metadata: Optional[Dict[str, Any]] = None
     description: Optional[str] = None
 
 
