@@ -81,11 +81,34 @@ npm install
 
 5. **Start Services**
 
+**Option 1: Using Management Script (Recommended)**
+
+```bash
+# Start all servers
+python manage_workflow_monitoring.py start
+
+# Check status
+python manage_workflow_monitoring.py status
+
+# Stop all servers
+python manage_workflow_monitoring.py stop
+
+# Restart all servers
+python manage_workflow_monitoring.py restart
+```
+
+**Option 2: Manual Start**
+
 Start PostgreSQL and Redis, then:
 
 ```bash
 # Terminal 1: API Server
-cd backend/app
+cd backend
+python -m venv venv
+venv\Scripts\activate  # On Windows
+# source venv/bin/activate  # On Linux/Mac
+pip install -r requirements.txt
+cd app
 uvicorn main:app --reload
 
 # Terminal 2: Worker (requires GPU)
@@ -94,8 +117,11 @@ python main.py
 
 # Terminal 3: Frontend
 cd frontend
+npm install
 npm run dev
 ```
+
+**Note:** Frontend runs on port **3009** (not 3000).
 
 ## Development
 
