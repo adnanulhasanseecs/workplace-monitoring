@@ -83,18 +83,23 @@ npm install
 
 **Option 1: Using Management Script (Recommended)**
 
-```bash
+```powershell
 # Start all servers
-python manage_workflow_monitoring.py start
+.\manage-workflow-monitoring.ps1 start
 
 # Check status
-python manage_workflow_monitoring.py status
+.\manage-workflow-monitoring.ps1 status
 
 # Stop all servers
-python manage_workflow_monitoring.py stop
+.\manage-workflow-monitoring.ps1 stop
 
 # Restart all servers
-python manage_workflow_monitoring.py restart
+.\manage-workflow-monitoring.ps1 restart
+```
+
+**Note:** If you get an execution policy error, run:
+```powershell
+Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope CurrentUser
 ```
 
 **Option 2: Manual Start**
