@@ -1,0 +1,55 @@
+# Security Events
+# Event definitions for security-related incidents
+
+default_thresholds:
+  unauthorized_access: 0.75
+  object_misuse: 0.7
+  intrusion: 0.8
+
+events:
+  - event_code: unauthorized_access
+    event_type: security_incident
+    name: Unauthorized Access
+    description: Unauthorized person detected in restricted area
+    severity: high
+    complexity: medium
+    required_classes:
+      - person
+    confidence_threshold: 0.75
+    temporal_required: true
+    pose_required: false
+    metadata:
+      category: security
+      priority: high
+
+  - event_code: object_misuse
+    event_type: security_incident
+    name: Object Misuse
+    description: Object being used inappropriately or unsafely
+    severity: medium
+    complexity: hard
+    required_classes:
+      - person
+    confidence_threshold: 0.7
+    temporal_required: true
+    pose_required: true
+    metadata:
+      category: security
+      priority: medium
+
+  - event_code: intrusion
+    event_type: security_incident
+    name: Intrusion Detected
+    description: Intrusion detected in secured area
+    severity: critical
+    complexity: medium
+    required_classes:
+      - person
+    confidence_threshold: 0.8
+    temporal_required: true
+    pose_required: false
+    metadata:
+      category: security
+      priority: critical
+      immediate_action_required: true
+

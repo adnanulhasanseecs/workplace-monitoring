@@ -1,0 +1,46 @@
+# Zone Definitions
+# Define monitoring zones for cameras
+
+zones:
+  - zone_id: zone_entrance
+    name: Entrance Zone
+    description: Main entrance area
+    coordinates:
+      - [0.1, 0.1]
+      - [0.5, 0.1]
+      - [0.5, 0.6]
+      - [0.1, 0.6]
+    rules:
+      required_ppe:
+        - helmet
+        - vest
+      max_persons: 5
+
+  - zone_id: zone_restricted
+    name: Restricted Area
+    description: Restricted access area
+    coordinates:
+      - [0.5, 0.3]
+      - [0.9, 0.3]
+      - [0.9, 0.9]
+      - [0.5, 0.9]
+    rules:
+      access_required: true
+      max_persons: 2
+      alert_on_entry: true
+
+  - zone_id: zone_workshop
+    name: Workshop Area
+    description: Workshop and equipment area
+    coordinates:
+      - [0.2, 0.4]
+      - [0.8, 0.4]
+      - [0.8, 0.8]
+      - [0.2, 0.8]
+    rules:
+      required_ppe:
+        - helmet
+        - vest
+        - gloves
+      max_persons: 10
+

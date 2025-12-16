@@ -1,0 +1,80 @@
+# PPE (Personal Protective Equipment) Violations
+# Event definitions for safety equipment detection
+
+default_thresholds:
+  ppe_violation: 0.7
+  missing_helmet: 0.75
+  missing_vest: 0.7
+  missing_gloves: 0.65
+
+events:
+  - event_code: missing_helmet
+    event_type: ppe_violation
+    name: Missing Helmet
+    description: Person detected without required safety helmet
+    severity: high
+    complexity: easy
+    required_classes:
+      - person
+    confidence_threshold: 0.75
+    temporal_required: false
+    pose_required: false
+    metadata:
+      category: safety
+      priority: high
+      required_ppe:
+        - helmet
+
+  - event_code: missing_vest
+    event_type: ppe_violation
+    name: Missing Safety Vest
+    description: Person detected without required safety vest
+    severity: medium
+    complexity: easy
+    required_classes:
+      - person
+    confidence_threshold: 0.7
+    temporal_required: false
+    pose_required: false
+    metadata:
+      category: safety
+      priority: medium
+      required_ppe:
+        - vest
+
+  - event_code: missing_gloves
+    event_type: ppe_violation
+    name: Missing Safety Gloves
+    description: Person detected without required safety gloves
+    severity: medium
+    complexity: medium
+    required_classes:
+      - person
+    confidence_threshold: 0.65
+    temporal_required: true
+    pose_required: true
+    metadata:
+      category: safety
+      priority: medium
+      required_ppe:
+        - gloves
+
+  - event_code: missing_ppe_set
+    event_type: ppe_violation
+    name: Missing Complete PPE Set
+    description: Person detected without complete required PPE set
+    severity: critical
+    complexity: hard
+    required_classes:
+      - person
+    confidence_threshold: 0.8
+    temporal_required: true
+    pose_required: true
+    metadata:
+      category: safety
+      priority: critical
+      required_ppe:
+        - helmet
+        - vest
+        - gloves
+

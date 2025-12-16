@@ -1,0 +1,90 @@
+# Safety Events
+# Event definitions for general safety incidents
+
+default_thresholds:
+  fire: 0.85
+  smoke: 0.8
+  crowd_density: 0.7
+  loitering: 0.75
+  aggressive_behavior: 0.8
+
+events:
+  - event_code: fire_detected
+    event_type: safety_incident
+    name: Fire Detected
+    description: Fire detected in monitored area
+    severity: critical
+    complexity: easy
+    required_classes:
+      - fire
+    confidence_threshold: 0.85
+    temporal_required: false
+    pose_required: false
+    metadata:
+      category: safety
+      priority: critical
+      immediate_action_required: true
+
+  - event_code: smoke_detected
+    event_type: safety_incident
+    name: Smoke Detected
+    description: Smoke detected in monitored area
+    severity: high
+    complexity: easy
+    required_classes:
+      - smoke
+    confidence_threshold: 0.8
+    temporal_required: false
+    pose_required: false
+    metadata:
+      category: safety
+      priority: high
+      immediate_action_required: true
+
+  - event_code: high_crowd_density
+    event_type: safety_incident
+    name: High Crowd Density
+    description: Excessive crowd density detected in area
+    severity: medium
+    complexity: medium
+    required_classes:
+      - person
+    confidence_threshold: 0.7
+    temporal_required: true
+    pose_required: false
+    metadata:
+      category: safety
+      priority: medium
+      threshold_persons: 10
+
+  - event_code: loitering
+    event_type: safety_incident
+    name: Loitering Detected
+    description: Person loitering in restricted area
+    severity: low
+    complexity: hard
+    required_classes:
+      - person
+    confidence_threshold: 0.75
+    temporal_required: true
+    pose_required: false
+    metadata:
+      category: security
+      priority: low
+      duration_threshold_seconds: 300
+
+  - event_code: aggressive_behavior
+    event_type: safety_incident
+    name: Aggressive Behavior
+    description: Aggressive behavior detected
+    severity: high
+    complexity: hard
+    required_classes:
+      - person
+    confidence_threshold: 0.8
+    temporal_required: true
+    pose_required: true
+    metadata:
+      category: security
+      priority: high
+

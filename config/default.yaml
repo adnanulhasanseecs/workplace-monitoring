@@ -1,0 +1,32 @@
+# Default System Configuration
+
+# Video Processing
+video:
+  chunk_duration_seconds: 300  # 5 minutes
+  base_fps: 1  # Base frame sampling rate
+  burst_fps: 5  # Burst frame sampling rate during events
+  max_clip_duration_seconds: 60  # Maximum event clip duration
+
+# Detection Settings
+detection:
+  default_confidence_threshold: 0.5
+  nms_threshold: 0.45
+  max_detections_per_frame: 100
+
+# Alert Settings
+alerts:
+  throttle_window_seconds: 300  # 5 minutes
+  max_alerts_per_window: 10
+  deduplication_window_seconds: 60
+
+# Storage Settings
+storage:
+  event_clip_retention_days: 90
+  metadata_retention_days: 365
+
+# Performance Settings
+performance:
+  batch_size: 8
+  gpu_memory_fraction: 0.8
+  max_concurrent_jobs: 4
+
