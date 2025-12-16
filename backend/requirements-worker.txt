@@ -6,8 +6,8 @@ torch==2.4.1
 torchvision==0.19.1
 torchaudio==2.4.1
 
-# Ultralytics YOLO11 (latest stable)
-ultralytics==8.5.0
+# Ultralytics YOLO11 (latest stable - supports YOLO11 models: yolo11n, yolo11s, yolo11m, yolo11l, yolo11x)
+ultralytics>=8.5.0
 
 # Computer Vision
 opencv-python==4.10.0.84

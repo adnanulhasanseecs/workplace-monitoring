@@ -44,6 +44,22 @@ class Settings(BaseSettings):
     EVENT_CLIPS_PATH: str = "./storage/clips"
     MAX_UPLOAD_SIZE_MB: int = 500
     
+    # Video Processing
+    DEFAULT_FPS: int = 5
+    BURST_FPS: int = 30
+    CHUNK_DURATION_SECONDS: int = 300
+    FRAME_SAMPLE_RATE: int = 1
+    
+    # GPU Configuration
+    CUDA_VISIBLE_DEVICES: str = "0"
+    GPU_MEMORY_FRACTION: float = 0.8
+    BATCH_SIZE: int = 16
+    
+    # YOLO11 Model Configuration
+    YOLO_MODEL_PATH: str = "./models/yolo11n.pt"  # Options: yolo11n.pt, yolo11s.pt, yolo11m.pt, yolo11l.pt, yolo11x.pt
+    YOLO_CONFIDENCE_THRESHOLD: float = 0.25
+    YOLO_IOU_THRESHOLD: float = 0.45
+    
     # Observability
     LOG_LEVEL: str = "INFO"
     LOG_FORMAT: str = "json"

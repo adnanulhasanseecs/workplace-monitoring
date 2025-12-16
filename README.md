@@ -34,9 +34,9 @@ See [ARCHITECTURE_PLAN.md](ARCHITECTURE_PLAN.md) for detailed system architectur
 - Pydantic
 
 ### ML/Inference
-- PyTorch
-- Ultralytics YOLO11
-- OpenCV
+- PyTorch 2.4.1
+- Ultralytics YOLO11 (yolo11n/s/m/l/x models)
+- OpenCV 4.10.0
 - CUDA
 
 ## Quick Start
