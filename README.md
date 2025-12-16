@@ -6,6 +6,9 @@ A production-grade video intelligence platform for industrial clients that inges
 
 - **Video Ingestion**: RTSP/HTTP streams and file uploads
 - **AI-Powered Detection**: YOLO11-based object detection, tracking, and event detection
+  - Supports YOLO11 models: nano (n), small (s), medium (m), large (l), xlarge (x)
+  - Automatic model downloading
+  - GPU acceleration with CUDA support
 - **Configurable Events**: 100+ event types (PPE violations, safety incidents, security events)
 - **Real-Time Alerts**: Multi-channel notifications (Email, Webhook, In-App)
 - **Enterprise Security**: JWT authentication, RBAC, audit logging
